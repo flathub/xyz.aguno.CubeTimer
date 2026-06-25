@@ -1,41 +1,29 @@
 {
-    "app-id" : "xyz.aguno.CubeTimer",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "49",
-    "sdk" : "org.gnome.Sdk",
-    "command" : "cubetimer",
-    "finish-args" : [
+    "app-id": "xyz.aguno.CubeTimer",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "50",
+    "sdk": "org.gnome.Sdk",
+    "command": "cubetimer",
+    "finish-args": [
         "--share=network",
         "--share=ipc",
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland"
     ],
-    "cleanup" : [
-        "/include",
-        "/lib/pkgconfig",
-        "/man",
-        "/share/doc",
-        "/share/gtk-doc",
-        "/share/man",
-        "/share/pkgconfig",
-        "*.la",
-        "*.a"
-    ],
-    "modules" : [
+    "modules": [
         {
-            "name" : "cubetimer",
-            "builddir" : true,
-            "buildsystem" : "meson",
-            "sources" : [
+            "name": "cubetimer",
+            "buildsystem": "meson",
+            "sources": [
                 {
-                    "type" : "git",
-                    "url" : "https://github.com/herpiko/cubetimer.git",
-                    "commit" : "31b86d45e0d81c92a9f3be38b086614c1c7c2d5f"
+                    "type": "git",
+                    "url": "https://github.com/herpiko/cubetimer.git",
+                    "commit": "31b86d45e0d81c92a9f3be38b086614c1c7c2d5f"
                 },
                 {
-                    "type" : "patch",
-                    "path" : "fix-appdata.patch"
+                    "type": "patch",
+                    "path": "fix-appdata.patch"
                 }
             ]
         }
